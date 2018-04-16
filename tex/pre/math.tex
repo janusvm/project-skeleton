@@ -1,0 +1,58 @@
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{bbm}
+\usepackage{commath}
+\usepackage{calrsfs}
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+
+%%% THEOREM ENVIRONMENTS %%%
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem*{cor}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{exmp}[thm]{Example}
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+
+%%% SETS %%%
+\newcommand{\R}{\mathbb{R}}  % real numbers
+\newcommand{\Z}{\mathbb{Z}}  % integers
+\newcommand{\C}{\mathbb{C}}  % complex numbers
+\newcommand{\T}{\pazocal{T}}  % arbitrary time index set
+\newcommand{\F}{\pazocal{F}}  % filtration set
+
+%%% OPERATORS %%%
+\DeclareMathOperator{\e}{e}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator*{\argmin}{\arg\,\min}
+\DeclareMathOperator*{\argmax}{\arg\,\max}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\inner{\langle}{\rangle}
+
+\newcommand{\of}[2][-1]{\!\del[#1]{#2}}
+\newcommand{\1}{\mathbbm{1}}  % Indicator function (operator style)
+\newcommand{\ind}[1]{\1\!\sbr{#1}}  % indicator function (function style)
+\newcommand{\E}[2][]{\mathbb{E}_{#1}\!\sbr{#2}}  % expected value with optional measure
+\newcommand{\PM}{\mathbb{P}}  % Probability measure
+\newcommand{\Var}[1]{\mathrm{Var}\!\sbr{#1}}  % variance
+\newcommand{\Cov}[2]{\mathrm{Cov}\!\del{#1, #2}}  % covariance
+\newcommand{\Cor}[2]{\mathrm{Cor}\!\del{#1, #2}}  % correlation
+\newcommand{\est}[1]{\widehat{#1}}  % hat for estimates
+\newcommand{\given}{\,\big\vert\,}  % taller vertical bar
+\newcommand{\widesim}[2][1.5]{\mathrel{\overset{#2}{\scalebox{#1}[1]{$\sim$}}}}
+
+% Redefine epsilon and phi
+\let\temp\epsilon
+\let\epsilon\varepsilon
+\let\varepsilon\temp
+\let\temp\phi
+\let\phi\varphi
+\let\varphi\temp
