@@ -1,8 +1,6 @@
 library(here)
-library(ggplot2)
 
-p <- ggplot(iris) +
-  aes(Petal.Width, Petal.Length, colour = Species) +
-  geom_point()
-
-ggsave(here("fig", "sample.pdf"), p, device = "pdf", width = 5, height = 3)
+filename <- here("fig", "sample.pdf")
+cairo_pdf(filename, width = 10, height = 6.8)
+plot(Petal.Length ~ Petal.Width, data = iris, col = Species)
+.off <- dev.off()

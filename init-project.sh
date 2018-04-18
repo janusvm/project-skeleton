@@ -6,6 +6,10 @@
 # Delete stuff from skeleton repository
 rm -rf .git LICENSE README.md
 
+# Create some directories
+mkdir data fig R/scripts/analysis R/scripts/data \
+      tex/tabs tex/tikz
+
 # Read project info from user input
 printf "Project name (will be used for folder name and document title): "
 read PROJECT
@@ -31,12 +35,16 @@ echo "# $PROJECT" > README.md
 
 # Create local R package
 Rscript --vanilla --slave -e "devtools::create('R/${R_PKG}')"
+Rscript --vanilla --slave -e "devtools::use_package('here', pkg = 'R/${R_PKG}')"
 echo "library(devtools)" > "R/${R_PKG}/.Rprofile"
 echo "# ${R_PKG}" > "R/${R_PKG}/README.md"
 
-# Create some directories
-mkdir data fig R/scripts/analysis R/scripts/data \
-      tex/tabs tex/tikz
+# Create git repo and make an initial commit
+git init
 
-# TODO: git stuff
-# TODO: run certain make commands
+# Build project
+make package
+make master
+
+# Delete self
+rm -- "$0"
