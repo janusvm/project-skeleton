@@ -30,7 +30,7 @@ mv "$PWD" "${PWD%/*}/$PROJECT"
 echo "# $PROJECT" > README.md
 
 # Create local R package
-Rscript -e "devtools::create('R/${R_PKG}')"
+Rscript -e --vanilla --slave "devtools::create('R/${R_PKG}')"
 echo "library(devtools)" > "R/${R_PKG}/.Rprofile"
 echo "# ${R_PKG}" > "R/${R_PKG}/README.md"
 
@@ -39,4 +39,4 @@ mkdir data fig R/scripts/analysis R/scripts/data \
       tex/tabs tex/tikz
 
 # TODO: git stuff
-
+# TODO: run certain make commands
