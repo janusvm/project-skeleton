@@ -1,4 +1,4 @@
-# Makefile for project '<PROJ_NAME>'
+# Makefile for project '<PROJECT>'
 # --------------------------------------------------------------------------
 
 # Main LaTeX files
