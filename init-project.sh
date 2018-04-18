@@ -14,7 +14,7 @@ read AUTHOR
 
 # Create a short name for local R package based on project name
 R_PKG="r"
-R_PKG+=$(echo "$PROJ_NAME" | sed -e "s/$/ /" -e "s/\([^ ]\)[^ ]* /\U\1/g" -e "s/^ *//")
+R_PKG+=$(echo "$PROJECT" | sed -e "s/$/ /" -e "s/\([^ ]\)[^ ]* /\U\1/g" -e "s/^ *//")
 
 # Insert variables into files
 sed -i -e "s/<PROJECT>/${PROJECT}/g" -e "s/<AUTHOR>/${AUTHOR}/g" -e "s/<R_PKG>/${R_PKG}/g" \
