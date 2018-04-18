@@ -30,7 +30,7 @@ mv "$PWD" "${PWD%/*}/$PROJECT"
 echo "# $PROJECT" > README.md
 
 # Create local R package
-Rscript -e --vanilla --slave "devtools::create('R/${R_PKG}')"
+Rscript --vanilla --slave -e "devtools::create('R/${R_PKG}')"
 echo "library(devtools)" > "R/${R_PKG}/.Rprofile"
 echo "# ${R_PKG}" > "R/${R_PKG}/README.md"
 
