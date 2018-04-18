@@ -43,7 +43,7 @@ rm "R/${R_PKG}/.gitignore"
 git init
 git add .gitignore README.md Makefile \
     master.tex janusvm.sty tex/ \
-    .here .Rprofile "${PROJECT}.Rproj"
+    .here .Rprofile "${PROJECT}.Rproj" \
     R/install_pkg.R "R/${R_PKG}/"
 git commit -m "Initial commit"
 
