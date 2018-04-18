@@ -35,15 +35,15 @@ echo "# $PROJECT" > README.md
 
 # Create local R package
 Rscript --vanilla --slave -e "devtools::create('R/${R_PKG}')"
-Rscript --vanilla --slave -e "devtools::use_package('here', pkg = 'R/${R_PKG}')"
 echo "library(devtools)" > "R/${R_PKG}/.Rprofile"
 echo "# ${R_PKG}" > "R/${R_PKG}/README.md"
 rm "R/${R_PKG}/.gitignore"
 
 # Create git repo and make an initial commit
 git init
-git add .gitignore README.md .Rprofile "${PROJECT}.Rproj" Makefile \
+git add .gitignore README.md Makefile \
     master.tex janusvm.sty tex/ \
+    .here .Rprofile "${PROJECT}.Rproj"
     R/install_pkg.R "R/${R_PKG}/"
 git commit -m "Initial commit"
 
