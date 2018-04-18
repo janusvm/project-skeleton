@@ -41,10 +41,8 @@ rm "R/${R_PKG}/.gitignore"
 
 # Create git repo and make an initial commit
 git init
-git add .gitignore README.md Makefile \
-    master.tex janusvm.sty tex/ \
-    .here .Rprofile "${PROJECT}.Rproj" \
-    R/install_pkg.R "R/${R_PKG}/"
+git add -A
+git reset tex/incl/sample.tex R/scripts/fig/sample.R "$0"
 git commit -m "Initial commit"
 
 # Build project
