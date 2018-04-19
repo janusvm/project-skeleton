@@ -82,10 +82,7 @@ force-run: clean-out view
 
 # Clean up latexmk output files
 clean-tex:
-	rm -fv *.aux *.log *.toc *.blg *.bbl *.synctex.gz
-	rm -fv *.out *.bcf *.blx.bib *.run.xml
-	rm -fv *.fdb_latexmk *.fls
-	rm -fv $(PAPER).pdf
+	latexmk -C
 
 # Delete out-files
 clean-out:
