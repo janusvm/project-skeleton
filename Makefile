@@ -37,7 +37,7 @@ R_ANALYSIS := $(wildcard $(RDIR)/analysis/*.R)
 DATA_OUT := $(R_DATA:.R=.Rout)
 FIG_OUT := $(R_FIG:.R=.Rout)
 ANALYSIS_OUT := $(R_ANALYSIS:.R=.Rout)
-ALL_OUT := $(DATA_OUT) $(FIG_OUT) $(TEST_OUT)
+ALL_OUT := $(DATA_OUT) $(FIG_OUT) $(ANALYSIS_OUT)
 
 # PDF figures
 FIGS := $(wildcard $(FIGDIR)/*.pdf)
@@ -78,7 +78,7 @@ package:
 	Rscript $(RSCRIPT_OPTS) R/install_pkg.R
 
 # Force rerun of all scripts and master file
-force-run: clean-out view
+force-run: clean-tex clean-out view
 
 # Clean up latexmk output files
 clean-tex:
